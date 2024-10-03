@@ -263,7 +263,7 @@ function TranscribeAi() {
         </div>
             <div>
             <div className='mic-btn'>
-                    <img src='./Images/mic_Button.png' onClick={() => startRecording(false)} type="button" alt="Start recording" />
+                    <img src='./Images/mic_button.png' onClick={() => startRecording(false)} type="button" alt="Start recording" />
                 </div>
                 {isPopupOpen && (
                     <div className='popup-container2' ref={popupRef}>
@@ -295,8 +295,8 @@ function TranscribeAi() {
                                 <>
                                     <div className='TranscribeAI_icons'>
                                         <div style={{ cursor: 'pointer' }}><img src='./Images/refresh_icon.png' style={{ width: '30px' }} alt='refresh icon' onClick={handleReset} /></div>
-                                        <div style={{ cursor: 'pointer' }} onClick={() => { setStatus(false); stopRecording(); handleStop(); }}><img src='./Images/pause_Btn.png' style={{ width: '40px' }} alt="Stop recording" /></div>
-                                        <div style={{ cursor: 'pointer' }} onClick={() => handleCopyClick(rewrittenTranscript)}><img src='./Images/Copy_Button.png' style={{ width: '30px' }} alt='copy icon' /></div>
+                                        <div style={{ cursor: 'pointer' }} onClick={() => { setStatus(false); stopRecording(); handleStop(); }}><img src='./Images/Pause_Btn.png' style={{ width: '40px' }} alt="Stop recording" /></div>
+                                        <div style={{ cursor: 'pointer' }} onClick={() => handleCopyClick(rewrittenTranscript)}><img src='./Images/Copy_button.png' style={{ width: '30px' }} alt='copy icon' /></div>
                                     </div>
                                 </>
                             )}
