@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Recorder from './Recorder';
+import SoundWave from './SoundWave/SoundWave';
+
 
 let gumStream = null;
 let recorder = null;
@@ -20,8 +22,22 @@ const SavedTranscribeText = () => {
     const [transcript, setTranscript] = useState('');
     const popupRef = useRef(null);
     const [deleteError, setDeleteError] = useState(null);
+    const [time, setTime] = useState(0);
+    const timerRef = useRef(null);
 
     const baseUrl = 'https://audio-to-text-back-end.onrender.com';
+
+    useEffect(() => {
+        if (isRecording) {
+            timerRef.current = setInterval(() => {
+                setTime((prevTime) => prevTime + 1);
+            }, 1000);
+        } else {
+            clearInterval(timerRef.current);
+        }
+
+        return () => clearInterval(timerRef.current);
+    }, [isRecording]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -261,9 +277,23 @@ const SavedTranscribeText = () => {
             {isPopupOpen && selectedTranscript && (
                 <div className="popup-overlay">
                     <div className="popup-content" ref={popupRef}>
+                    {isRecording && (
+                            <>
+                                <div className='timer'>{new Date(time * 1000).toISOString().substr(11, 8)}</div>
+                                <SoundWave />
+                            </>
+                        )}
                         <button className="close-button" onClick={() => setIsPopupOpen(false)}>×</button>
                         <div className='box-container'> 
-                        <div className="transcript-text">{selectedTranscript}</div>
+                            
+                        <pre className="transcript-text">{selectedTranscript}<br/>
+                        {!isRecording && rewrittenTranscript && (
+                            <div className='popup-container-text'>
+                                <pre style={{ whiteSpace: 'pre-wrap' }}>{rewrittenTranscript}</pre>
+                                
+                            </div>
+                        )}
+                        </pre>
                         <button className="append-note-button" onClick={handleAppendNote}>Append a note</button>
                         </div>
                         <div className='btn-container-div'>

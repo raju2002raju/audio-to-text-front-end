@@ -47,6 +47,9 @@ function TranscribeAi() {
         };
     }, []);
 
+ 
+
+
     useEffect(() => {
         const fetchUserData = async () => {
             try {
@@ -226,7 +229,21 @@ function TranscribeAi() {
         startRecording(true);
     };
 
+    useEffect(() => {
+        const handleClickOutsidepopup = (event) => {
+            if (popupRef.current && !popupRef.current.contains(event.target)) {
+                setShowPopup(false);
+            }
+        };
 
+        if (showpopup) {
+            document.addEventListener('mousedown', handleClickOutsidepopup);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutsidepopup);
+        };
+    }, [showpopup]);
       
 
 
@@ -262,7 +279,7 @@ function TranscribeAi() {
                   </header>
         </div>
             <div>
-            <div className='mic-btn'>
+            <div onClick={() => startRecording(false)} className='mic-btn'>
                     <img src='./Images/mic_button.png' onClick={() => startRecording(false)} type="button" alt="Start recording" />
                 </div>
                 {isPopupOpen && (
@@ -274,7 +291,7 @@ function TranscribeAi() {
                             </>
                         )}
                         {!isRecording && rewrittenTranscript && (
-                            <div style={{overflowY: 'scroll'}}>
+                            <div className='popup-container-text'>
                                 <h3>Transcript:</h3>
                                 <pre style={{ whiteSpace: 'pre-wrap' }}>{rewrittenTranscript}</pre>
                                 <div className='Btn-div'>
@@ -287,7 +304,7 @@ function TranscribeAi() {
                                 <>
                                     <div className='TranscribeAI_icons'>
                                         <div style={{ cursor: 'pointer' }}><img src='./Images/refresh_icon.png' style={{ width: '30px' }} alt='refresh icon' onClick={handleReset} /></div>
-                                        <div style={{ cursor: 'pointer' }} onClick={() => { setStatus(false); stopRecording(); handleStop(); }}><img src='./Images/pause_Btn.png' style={{ width: '100px' }} alt="Stop recording" /></div>
+                                        <div style={{ cursor: 'pointer' }} onClick={() => { setStatus(false); stopRecording(); handleStop(); }}><img src='./Images/Pause_Btn.png' style={{ width: '100px' }} alt="Stop recording" /></div>
                                         <div onClick={handleCrossIcon}><img style={{ width: '40px' }} src='./Images/cross_icon.png' alt='closs'/></div>
                                     </div>
                                 </>
@@ -312,25 +329,51 @@ function TranscribeAi() {
            <SavedTranscribeText onTranscriptSelect={(id) => setCurrentTranscriptId(id)} />
            </div>
 
-       {showpopup && (
-
-<div className='profile-edit-container'>
-<div className='edit-profile'>
-{userData && (
-<div>
-    <p>{userData.name}</p>
-    <p>{userData.email}</p>
-</div>
-)}
-    <hr/>
-    <button onClick={() => {navigate('/profile-update')}}><FontAwesomeIcon icon={faPenToSquare} />Edit Profile</button>
-    <hr/>
-    <button onClick={() => {navigate('/plans')}}><FontAwesomeIcon icon={faArrowsRotate} />Upgrade Plan</button>
-    <hr/>
-    <button onClick={handleLogout}><FontAwesomeIcon icon={faArrowRightFromBracket} /> Log Out</button>
-</div>
-</div>
-       )}
+           {showpopup && (
+                <div className='profile-edit-container' ref={popupRef}>
+                    <div className='edit-profile'>
+                        {userData && (
+                            <div className="user-info">
+                                <p className="user-name">{userData.name}</p>
+                                <p className="user-email">{userData.email}</p>
+                            </div>
+                        )}
+                        <hr/>
+                        <button 
+                            className="profile-button"
+                            onClick={() => {
+                                navigate('/profile-update');
+                                setShowPopup(false);
+                            }}
+                        >
+                            <FontAwesomeIcon icon={faPenToSquare} />
+                            <span>Edit Profile</span>
+                        </button>
+                        <hr/>
+                        <button 
+                            className="profile-button"
+                            onClick={() => {
+                                navigate('/plans');
+                                setShowPopup(false);
+                            }}
+                        >
+                            <FontAwesomeIcon icon={faArrowsRotate} />
+                            <span>Upgrade Plan</span>
+                        </button>
+                        <hr/>
+                        <button 
+                            className="profile-button"
+                            onClick={() => {
+                                handleLogout();
+                                setShowPopup(false);
+                            }}
+                        >
+                            <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                            <span>Log Out</span>
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
