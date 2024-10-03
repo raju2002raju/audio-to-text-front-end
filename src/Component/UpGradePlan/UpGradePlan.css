@@ -1,0 +1,94 @@
+.upgradeplane-main-container{
+    min-height: 100vh;
+    background: linear-gradient(#418EDF, #402598);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.upgrade-h1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #ffffff84;
+}
+
+.upgradeplane-container{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+}
+
+.pricing-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.free-plan,
+.upgrade-plan{
+    border: 1px solid #fff;
+    width: 300px;
+    height: 400px;
+}
+
+.free-plan{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+    .free-plan p{
+    color: #ffffff84;
+}
+
+.free-plan-button{
+    display: flex;
+    justify-content: center;
+}
+
+.free-plan button{
+    border: 1px solid #fff;
+    background: none;
+    color: #fff;
+    width: 90%;
+    padding: 12px;
+    border-radius: 20px;
+    cursor: not-allowed;
+}
+
+
+.upgrade-plan{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.upgrade-plan p{
+    color: #ffffff84;
+}
+
+.upgrade-plan button{
+    width: 90%;
+    padding: 12px;
+    background:rgb(16, 163, 167);
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width:767px)  {
+    .pricing-container{
+            flex-direction: column;
+            gap: 30px;
+    }
+
+    .free-plan,
+    .upgrade-plan{
+        border-radius: 10px;
+    }
+}

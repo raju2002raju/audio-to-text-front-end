@@ -1,0 +1,42 @@
+.home-main-container{
+    background: linear-gradient(#418EDF, #402598);
+    min-height: 100vh;
+}
+
+
+.soundwave-container img{
+        width: 100%;
+        height: 604px;
+}
+
+.text-container p{
+    color: #fff;
+    font-size: 18px;
+    width: 250px;
+    text-align: center;
+}
+
+.text-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-image{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (max-width:767px) {
+        .footer-image{
+            display: none;
+        }     
+        
+}

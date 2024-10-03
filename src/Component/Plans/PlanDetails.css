@@ -1,0 +1,173 @@
+.container {
+    padding: 16px;
+  }
+  
+  .header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .btn-back {
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-back:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .text-muted {
+    color: #888;
+  }
+  
+  .card-description {
+    font-size: 14px;
+  }
+  
+  .tab-list {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 16px;
+  }
+  
+  .icon {
+    margin-right: 8px;
+  }
+  
+  .payment-option {
+    text-align: center;
+    padding: 16px;
+  }
+  
+  .qr-code-box {
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .qr-code {
+    width: 150px;
+  }
+  
+  .debit-card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .btn-submit {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-submit:hover {
+    background-color: #0056b3;
+  }
+  
+  .footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+
+  /* 
+   */
+
+   .container {
+    padding: 16px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-muted {
+    color: #888;
+  }
+  
+  .btn-back {
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 16px;
+  }
+  
+  .btn-back:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .plan-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .plan-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .plan-price {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+  
+  .payment-section {
+    margin-top: 24px;
+  }
+  
+  .checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .card-element {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 8px;
+  }
+  
+  .submit-button {
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .submit-button:disabled {
+    background-color: #ddd;
+  }
+  

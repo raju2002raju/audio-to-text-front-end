@@ -1,0 +1,142 @@
+.onboarding-container{
+    background: linear-gradient( #402598, #418EDF);
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.vector-img{
+    width: 300px;
+}
+
+.mobile-h1{
+    display: none;
+}
+
+
+.desktop-h1 span {
+    background: linear-gradient(to right, #FFEEAC, #FFEA00, #FFEEAC);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+}
+
+.desktop-text-div{
+    width: 500px;
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.splash-Btn{
+    width: 100%;
+    background:linear-gradient(to right, #FFEA07, #ffbb00) ;
+    border: none;
+    padding: 16px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* Login & Signup Onboarding css */
+
+.LoginSignup-onboarding-container{
+    background: linear-gradient( #402598, #418EDF);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.desktop-onboarding-loginSignup-h1{
+    font-size: 25px;
+}
+
+.signup-signin-btn{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.signup-signin-btn button{
+    width: 100%;
+    padding: 13px;
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.signup-signin-btn button:hover{
+    background-color: #FFEA00;
+    color: #000;
+    border: none;
+}
+
+.desktop-onboarding-loginSignup-h1{
+    color: #fff;
+}
+
+@media (max-width:767px) {
+    .onboarding-container{
+        grid-template-columns: 1fr;
+    }
+
+    .desktop-text-div{
+        width: 100%;
+    }
+    .splash-Btn{
+        width: 90%;
+        background:linear-gradient(to right, #FFEA07, #ffbb00) ;
+    }
+
+    .mobile-h1{
+        display: block;
+        color: #fff;
+        text-align: center;
+    }
+
+    .d-image,
+    .desktop-h1{
+        display: none;
+    }
+
+    .m-image{
+        width: 200px;
+    }
+
+    .mobile-h1 span{
+        background: linear-gradient(to right, #FFEEAC, #FFEA00, #FFEEAC);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .m-text{
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .m-btn{
+        display: flex;
+        justify-content: center;
+    }
+
+    .signup-signin-btn{
+        width: 300px;
+    }
+
+    .LoginSignup-onboarding-container{
+        gap: 35px;
+    }
+}

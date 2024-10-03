@@ -1,0 +1,373 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: GoudyTitling-Bold;
+}
+
+.main-container{
+  background: linear-gradient(#418EDF, #402598);
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-container h1{
+  color: #fff;
+}
+
+.logo-text{
+  color: #FBD12D;
+}
+
+/* Scroll Bar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.profile-pic{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.append-note-button {
+  padding: 10px;
+  background: none;
+  border-radius: 20px;
+}
+
+.setting_main_container{
+  margin-top: 50px;
+  position: absolute;
+  top: 4%;
+  width: 92%;
+  left: 8%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.setting_container{
+  border: 1px solid #ccc;
+  padding: 50px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.setting_container button{
+  width: 100%;
+}
+
+
+/* Transcribe Ai Css  */
+
+.popup-container2 {
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 20px 20px rgba(52, 48, 48, 0.2);
+  width: 500px;
+  box-sizing: border-box; 
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  overflow: auto;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 1;
+  background: #fff;
+  
+}
+
+/* saved Transcribe text  */
+
+.savedFile_container{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+
+.TranscribeRecordingBtn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.TranscribeRecordingBtn{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+/* saved transcribe lanuages css  */
+
+.language_div{
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.language_div h4{
+  text-align: center;
+}
+.language_div p{
+  text-align: center;
+  font-size: 15px;
+}
+
+.language_div select{
+ width: 95%;
+ text-align: center;
+ padding: 10px;
+ margin: 10px;
+}
+
+/*   Transcribe Ai Icons  */
+
+
+.TranscribeAI_icons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px;
+  margin-top: 30px;
+}
+
+/* Times CSS */
+.timer{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-size: xx-large;
+}
+
+
+
+/* Transcribe Ai */
+
+.mic-btn{
+  position: fixed;
+  bottom: -40px;
+  translate: -50% -50%;
+  left: 50%;
+}
+
+.mic-btn img{
+  width: 100px;
+}
+
+
+/* Saved Transcript */
+.table-row{
+  border-radius: 10px;
+  width: 700px;
+  box-shadow: 0 3px 10px #ffffff1f;
+  background: #ffffff1f;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  cursor: pointer;
+  padding: 20px;
+  border: 1px solid #fff;
+}
+
+.saved-transcript{
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+  left: 50%;
+
+}
+
+.saved-transcribe-text{
+  overflow-y: auto;
+  height: 350px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 85%;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 18px;
+  right: 27px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.box-container{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #D9D9D9;
+    height: 40vh;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.transcript-text {
+  margin-bottom: 20px;
+}
+
+.append-note-button {
+  background: linear-gradient(#418EDF, #402E9E);
+  color: white;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 25px;
+  
+}
+
+.btn-container-div{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  justify-items: center;
+}
+
+.greeting-container{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.greeting-div{
+  margin-bottom: 40px;
+}
+
+.transcribe-container{
+ display: flex;
+ justify-content: space-between;
+ padding: 20px;
+}
+
+.transcribe-logo{
+  width: 100px;
+}
+
+.profile-edit-container{
+  position: absolute;
+      left: 92%;
+      top: 30%;
+      transform: translate(-50%, -75%);
+  }
+
+  
+
+  .edit-profile{
+    width: 200px;
+    height: 200px;
+    background: rgb(227, 216, 216);
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    padding-left: 10px;
+    text-align: center;
+  }
+
+  .edit-profile button{
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+
+
+@media (max-width:767px) {
+    .popup-container2{
+      width: 90%;
+    }
+
+    .mic-btn{
+      bottom: -20px;
+    }
+
+    .table-row{
+      width: 340px;
+    }
+
+    .btn-container-div{
+      gap: 0px;
+    }
+
+    .transcribe-logo{
+      width: 60px;
+    }
+
+    .profile-edit-container {
+      position: absolute;
+      left: 67%;
+      top: 33%;
+      transform: translate(-50%, -75%);
+  }
+}
+
+
+
+
+
+
+
