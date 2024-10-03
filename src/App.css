@@ -171,7 +171,7 @@
 
 .mic-btn{
   position: fixed;
-  bottom: -40px;
+  bottom: 40px;
   translate: -50% -50%;
   left: 50%;
 }
