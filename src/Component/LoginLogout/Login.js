@@ -37,7 +37,7 @@ const LoginButton = () => {
         const result = await signupResponse.json();
         if (result.success) {
           localStorage.setItem('user', JSON.stringify(userInfo));
-          navigate('/chat');
+          navigate('/audio_to_text');
         } else {
           console.error('Signup failed:', result.message);
         }
